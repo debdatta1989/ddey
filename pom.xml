@@ -21,9 +21,6 @@
 
         <resources>
             <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-            <resource>
                 <directory>src/main/features</directory>
             </resource>
         </resources>
