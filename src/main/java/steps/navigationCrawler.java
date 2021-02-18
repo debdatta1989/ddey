@@ -5,34 +5,18 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import util.configurationUtil;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static helper.webpageHelper.driver;
-
+import static helper.webpageHelper.getTheMainPage;
 import static org.openqa.selenium.Keys.ENTER;
 
 public class navigationCrawler {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(configurationUtil.class);
-    private static final Map<String, String> configuration = new HashMap<String, String>();
-    private static final String PATH_CHROME_DRIVER = "path.machine.chrome.driver";
-    private static final String URL = "url.path";
-
-
     @Given("navigate to google webpage and accept the privacy consent")
     public void navigateToGoogleWebPage() {
-        System.setProperty("webdriver.chrome.driver", "D:/debdatta/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.navigate().to("https://www.google.com/");
+        getTheMainPage();
         Assert.assertEquals("Google",
                 (driver.getTitle()));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
