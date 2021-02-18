@@ -16,5 +16,10 @@
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus-kering" />
+      <option name="name" value="nexus-kering" />
+      <option name="url" value="https://hive-nexus.mgmt4apps.io/repository/maven-public/" />
+    </remote-repository>
   </component>
 </project>
